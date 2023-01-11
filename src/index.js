@@ -19,7 +19,6 @@ const options = {
 	  .then(response => console.log(response))
 	  .catch(err => console.error(err));
 
-		console.log(data)
-		.catch(error => console.error(error));
-	});
+
+  });
   
