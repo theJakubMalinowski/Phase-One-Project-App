@@ -5,10 +5,11 @@ const options = {
 		'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
 	}
 };
+const form = document.querySelector('form');
+const resultsDiv = document.querySelector('#results');
+const searchButton = document.getElementById("search-button");
+const input = document.getElementById("search-input"); 
 
-
-  const searchButton = document.getElementById("search-button");
-  const input = document.getElementById("search-input"); 
   searchButton.addEventListener("click", (event) => {
 	  event.preventDefault();
 	  const searchTerm = input.value; 
