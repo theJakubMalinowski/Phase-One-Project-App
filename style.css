@@ -46,23 +46,27 @@ body {
     border-radius: 10px;
     margin: 40px auto 20px;
   }
-  
-  #results .movies-container .movies {
+
+  .movies {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
   }
   
-  #results .movies-container .movies li {
-    list-style: none;
+   .movies li {
     width: 23%;  
-    margin: 10px;
-    text-align: center;
+    margin: 0 0 20px;
+    list-style: none;
+    padding: 10px;
   }
   
-  #results .movies-container .movies li img {
+  .movies li img {
     width: 100%; 
     height: auto;
     border-radius: 5px;
   }
   
+  .movies li h2 {
+  margin: 10px 0;
+  font-size: 18px;
+  }
