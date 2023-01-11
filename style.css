@@ -46,4 +46,20 @@ body {
     border-radius: 4px;
     overflow: auto;
   }
+
+  #results .movies-container .movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #results .movies-container .movies li {
+    list-style: none;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  #results .movies-container .movies li img {
+    width: 200px;
+  }
   
