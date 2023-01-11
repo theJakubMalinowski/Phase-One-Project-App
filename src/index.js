@@ -2,16 +2,19 @@
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': API_KEY,
+    'X-RapidAPI-Key': API_Key,
     'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
   }
 };
 
+
+const searchButton = document.getElementById("search-button");
 searchButton.addEventListener("click", (event) => {
 	event.preventDefault();
-	const searchInput = document.getElementById("search-input").value;
+	const searchTerm = input.value;
+  
 	// Make the HTTP request to the movie database API
-	fetch(`https://online-movie-database.p.rapidapi.com/auto-complete?q=${searchInput}`, options)
+	fetch(`https://online-movie-database.p.rapidapi.com/auto-complete?q=${searchTerm}`, options)
 	  .then(response => response.json())
 	  .then(data => {
 		const searchResults = document.getElementById("search-results");
