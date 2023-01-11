@@ -8,10 +8,10 @@ const options = {
 
 
   const searchButton = document.getElementById("search-button");
-  const input = document.getElementById("search-input"); // added this line
+  const input = document.getElementById("search-input"); 
   searchButton.addEventListener("click", (event) => {
 	  event.preventDefault();
-	  const searchTerm = input.value; // changed this line
+	  const searchTerm = input.value; 
 	
 	  // Make the HTTP request to the movie database API
 	  fetch(`https://online-movie-database.p.rapidapi.com/auto-complete?q=${searchTerm}`, options)
