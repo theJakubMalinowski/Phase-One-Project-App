@@ -10,6 +10,7 @@ const form = document.querySelector('form');
 const resultsDiv = document.querySelector('#results');
 const searchButton = document.getElementById("search-button");
 const input = document.getElementById("search-input"); 
+
 searchButton.addEventListener("click", (event) => {
 	event.preventDefault();
 	const searchTerm = input.value; 
@@ -31,6 +32,7 @@ searchButton.addEventListener("click", (event) => {
 		  const movie = `<li>
 			<img src="${poster}">
 			<h2>${name}</h2>
+			<button class="like-button">Like</button>
 		  </li>`
 		  return movie;
 		}
@@ -39,6 +41,14 @@ searchButton.addEventListener("click", (event) => {
 	  // Display the movies in the HTML
 	  const moviesList = document.querySelector('.movies');
 	  moviesList.innerHTML = movies.join('');
+      
+      // add event listener to like button
+      const likeButtons = document.querySelectorAll('.like-button');
+      likeButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+          event.target.innerHTML = 'Liked';
+          event.target.disabled = true;
+        });
+      });
 	});
   });
-  
