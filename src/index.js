@@ -11,6 +11,9 @@ const resultsDiv = document.querySelector('#results');
 const searchButton = document.getElementById("search-button");
 const input = document.getElementById("search-input"); 
 
+// create a reference to saved movies container
+const savedMoviesContainer = document.querySelector('.saved-movies');
+
 searchButton.addEventListener("click", (event) => {
 	event.preventDefault();
 	const searchTerm = input.value; 
@@ -48,6 +51,10 @@ searchButton.addEventListener("click", (event) => {
         button.addEventListener('click', (event) => {
           event.target.innerHTML = 'Liked';
           event.target.disabled = true;
+
+		     // add the movie to the saved movies container
+			 const movie = event.target.closest('li');
+			 savedMoviesContainer.appendChild(movie);
         });
       });
 	});

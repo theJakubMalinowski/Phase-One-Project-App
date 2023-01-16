@@ -58,7 +58,21 @@ body {
     border-radius: 10px;
     margin: 40px auto 20px;
 }
-
+#toggle-btn {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.2s;
+  }
 .movies,
 .saved-movies {
   display: flex;
@@ -142,20 +156,4 @@ body {
   font-size: 18px;
 }
 
-.saved-movies li .like-btn {
-  display: block;
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.2s;
-}
 
-.saved-movies li .like-btn:hover {
-  background-color: #45a049;
-}
