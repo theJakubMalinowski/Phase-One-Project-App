@@ -71,8 +71,16 @@ body {
     cursor: pointer;
     font-size: 16px;
     text-align: center;
-    transition: background-color 0.2s;
   }
+
+  .hidden {
+    display: none;
+  }
+  
+  #toggle-btn:hover {
+    background-color: #45a049;
+  }
+  
 .movies,
 .saved-movies {
   display: flex;
@@ -121,6 +129,19 @@ body {
   background-color: #45a049;
 }
 
+h1.results-title {
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  
+  .saved-movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
 .saved-movies {
   display: flex;
   flex-wrap: wrap;
@@ -156,4 +177,9 @@ body {
   font-size: 18px;
 }
 
+.saved-movies {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
 

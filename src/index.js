@@ -12,6 +12,7 @@ const searchButton = document.getElementById("search-button");
 const input = document.getElementById("search-input"); 
 const toggleBtn = document.querySelector('#toggle-btn');
 
+
 // create a reference to saved movies container
 const savedMoviesContainer = document.querySelector('.saved-movies');
 
@@ -56,6 +57,13 @@ searchButton.addEventListener("click", (event) => {
    		 // add the movie to the saved movies container
 		const movie = event.target.closest('li').cloneNode(true); // clone the movie so it stays in the results
 		savedMoviesContainer.appendChild(movie);
+
+		const savedMovie = document.createElement('div');
+		savedMovie.classList.add("movie-item");
+		savedMovie.appendChild(event.target.closest('.movie-item').cloneNode(true));
+		const savedMovies = document.querySelector('.saved-movies');
+		savedMovies.appendChild(savedMovie);
+
   		});
       });
 	});
@@ -73,4 +81,6 @@ searchButton.addEventListener("click", (event) => {
 		savedMoviesElement.style.display = 'none';
 	  }
 	});
+
+
   
