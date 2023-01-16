@@ -52,10 +52,10 @@ searchButton.addEventListener("click", (event) => {
           event.target.innerHTML = 'Liked';
           event.target.disabled = true;
 
-		     // add the movie to the saved movies container
-			 const movie = event.target.closest('li');
-			 savedMoviesContainer.appendChild(movie);
-        });
+   		 // add the movie to the saved movies container
+		const movie = event.target.closest('li').cloneNode(true); // clone the movie so it stays in the results
+		savedMoviesContainer.appendChild(movie);
+  		});
       });
 	});
   });
