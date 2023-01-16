@@ -10,6 +10,7 @@ const form = document.querySelector('form');
 const resultsDiv = document.querySelector('#results');
 const searchButton = document.getElementById("search-button");
 const input = document.getElementById("search-input"); 
+const toggleBtn = document.querySelector('#toggle-btn');
 
 // create a reference to saved movies container
 const savedMoviesContainer = document.querySelector('.saved-movies');
@@ -59,3 +60,17 @@ searchButton.addEventListener("click", (event) => {
       });
 	});
   });
+
+  // Add a click event listener to the toggle button
+	toggleBtn.addEventListener('click', () => {
+		// Toggle the visibility of the saved movies element
+		const savedMoviesElement = document.querySelector('.saved-movies');
+		savedMoviesElement.classList.toggle('hidden');
+	
+	  if (savedMoviesElement.style.display === 'none') {
+		savedMoviesElement.style.display = 'block';
+	  } else {
+		savedMoviesElement.style.display = 'none';
+	  }
+	});
+  
