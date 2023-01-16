@@ -37,7 +37,7 @@ body {
   
   button[type="submit"] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #7988f8;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -64,7 +64,7 @@ body {
     max-width: 600px;
     margin: 0 auto 20px;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #7988f8;
     color: white;
     border: none;
     border-radius: 5px;
@@ -78,7 +78,7 @@ body {
   }
   
   #toggle-btn:hover {
-    background-color: #45a049;
+    background-color: #7988f8;
   }
   
 .movies,
@@ -113,7 +113,7 @@ body {
 .saved-movies li .like-btn {
   display: block;
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #7988f8;
   color: white;
   padding: 10px;
   margin: 10px 0;
@@ -121,12 +121,11 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.2s;
 }
 
 .movies li .like-btn:hover,
 .saved-movies li .like-btn:hover {
-  background-color: #45a049;
+  background-color:#7988f8;
 }
 
 h1.results-title {
