@@ -12,7 +12,7 @@ const options = {
   const savedMoviesContainer = document.querySelector('.saved-movies');
   
   // Function to generate movie element
-  function generateMovieElement(poster, name) {
+function generateMovieElement(poster, name) {
 	const movie = document.createElement('li');
 	
 	const moviePoster = document.createElement('img');
@@ -27,9 +27,9 @@ const options = {
 	likeButton.classList.add('like-button');
 	likeButton.textContent = 'Like';
 	likeButton.addEventListener('click', (event) => {
-	  event.target.innerHTML = 'Liked';
-	  event.target.disabled = true;
-	  savedMoviesContainer.appendChild(movie.cloneNode(true));
+		event.target.innerHTML = 'Liked';
+		event.target.disabled = true;
+		savedMoviesContainer.appendChild(movie.cloneNode(true));
 	});
 	movie.appendChild(likeButton);
   
@@ -46,20 +46,27 @@ const options = {
 		const listOfMovies = data.d;
 		const moviesList = document.querySelector('.movies');
 		moviesList.innerHTML = '';
+		console.log(listOfMovies)
 	
 		listOfMovies.forEach(movie => {
-		  if (movie.i) {
-			const movieElement = generateMovieElement(movie.i.imageUrl, movie.l);
-			moviesList.appendChild(movieElement);
-		  }
+			if (movie.i) {
+				const movieElement = generateMovieElement(movie.i.imageUrl, movie.l);
+				moviesList.appendChild(movieElement);
+		  	}
 		});
-	  });
-  });
+	});
+});
   
   // Add a click event listener to the toggle button
-  toggleBtn.addEventListener('click', () => {
+toggleBtn.addEventListener('click', () => {
 	// Toggle the visibility of the saved movies element
 	const savedMoviesElement = document.querySelector('.saved-movies');
 	savedMoviesElement.classList.toggle('hidden');
-  });
-  
+	});
+
+document.addEventListener("keydown", (event) => {
+	if (event.key === "Escape") {
+		const moviesList = document.querySelector('.movies');
+		moviesList.innerHTML = '';
+	}
+});
