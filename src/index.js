@@ -6,11 +6,12 @@ const options = {
 	}
   };
   
-  const searchButton = document.getElementById("search-button");
-  const input = document.getElementById("search-input"); 
-  const toggleBtn = document.getElementById('toggle-btn');
-  const savedMoviesContainer = document.querySelector('.saved-movies');
-  
+const searchButton = document.getElementById('search-button');
+const input = document.getElementById('search-input'); 
+const toggleBtn = document.getElementById('toggle-btn');
+const savedMoviesContainer = document.querySelector('.saved-movies');
+const moviesList = document.querySelector('.movies');
+ 
   // Function to generate movie element
 function generateMovieElement(poster, name) {
 	const movie = document.createElement('li');
@@ -34,9 +35,9 @@ function generateMovieElement(poster, name) {
 	movie.appendChild(likeButton);
   
 	return movie;
-  }
-  
-  searchButton.addEventListener("click", (event) => {
+}
+//Search Button eventListener & Fetch request
+searchButton.addEventListener('click', (event) => {
 	event.preventDefault();
 	const searchTerm = input.value; 
   
@@ -44,7 +45,6 @@ function generateMovieElement(poster, name) {
 	  .then(response => response.json())
 	  .then(data => {
 		const listOfMovies = data.d;
-		const moviesList = document.querySelector('.movies');
 		moviesList.innerHTML = '';
 		console.log(listOfMovies)
 	
@@ -56,17 +56,23 @@ function generateMovieElement(poster, name) {
 		});
 	});
 });
-  
-  // Add a click event listener to the toggle button
+
+// Toggle Button eventListener
 toggleBtn.addEventListener('click', () => {
-	// Toggle the visibility of the saved movies element
 	const savedMoviesElement = document.querySelector('.saved-movies');
 	savedMoviesElement.classList.toggle('hidden');
-	});
+  
+	if (savedMoviesElement.style.display === 'block') {
+	  savedMoviesElement.style.display = 'none';
+	} else {
+	  savedMoviesElement.style.display = 'block';
+	}
+});
 
-document.addEventListener("keydown", (event) => {
-	if (event.key === "Escape") {
-		const moviesList = document.querySelector('.movies');
-		moviesList.innerHTML = '';
+// Escape button to reset
+document.addEventListener('keydown', (event) => {
+	if (event.key === 'Escape') {
+	  const moviesList = document.querySelector('.movies');
+	  moviesList.innerHTML = '';
 	}
 });

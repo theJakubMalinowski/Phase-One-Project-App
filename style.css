@@ -1,18 +1,18 @@
 * {
-    box-sizing: border-box;
-  }  
+  box-sizing: border-box;
+}  
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
-  }
-  
-  h1 {
+  background-color: #f1f1f1f3;
+}
+
+h1 {
   text-align: center;
   margin-bottom: 0.5em;
-  }
-  
-  form {
+}
+
+form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,11 +21,11 @@ body {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #000000
+  background-color: #ffffff
   border-radius 5px;
-  }
-  
-  input[type="text"] {
+}
+
+input[type="text"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -33,9 +33,9 @@ body {
   border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  }
-  
-  button[type="submit"] {
+}
+
+button[type="submit"] {
   width: 100%;
   background-color: #7988f8;
   color: white;
@@ -45,9 +45,13 @@ body {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  }
-  
-  #results {
+}
+
+button[type="submit"]:hover{
+  background-color: #6b78da;
+}
+
+#results {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -71,16 +75,16 @@ body {
   cursor: pointer;
   font-size: 16px;
   text-align: center;
-  }
+}
 
 .hidden {
   display: none;
 }
-  
+
 #toggle-btn:hover {
-  background-color: #7988f8;
-  }
-  
+  background-color: #6b78da;
+}
+
 .movies,
 .saved-movies {
   display: flex;
@@ -91,7 +95,7 @@ body {
 .movies li,
 .saved-movies li {
   width: 25%;
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   list-style: none;
   padding: 10px;
 }
@@ -109,8 +113,8 @@ body {
   font-size: 18px;
 }
 
-.movies li .like-btn,
-.saved-movies li .like-btn {
+.movies li .like-button,
+.saved-movies li .like-button {
   display: block;
   width: 100%;
   background-color: #7988f8;
@@ -120,32 +124,28 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
+  transition: background-color 0.2s;
 }
 
-.movies li .like-btn:hover,
-.saved-movies li .like-btn:hover {
-  background-color:#7988f8;
+.movies li .like-button:hover,
+.saved-movies li .like-button:hover {
+  background-color: #6b78da;
 }
 
 h1.results-title {
   text-align: center;
   margin-bottom: 0.5em;
-  }
+}
 
-.hidden {
-  display: none;
-  }
-  
-  
 .saved-movies-container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   align-items: center;
   justify-content: center;
-}
-  
+  }
+
 .saved-movies {
   display: flex;
   flex-wrap: wrap;
@@ -180,6 +180,3 @@ h1.results-title {
   margin: 10px 0;
   font-size: 18px;
 }
-
-
-
