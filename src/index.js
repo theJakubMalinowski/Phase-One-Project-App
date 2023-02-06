@@ -32,6 +32,7 @@ function generateMovieElement(poster, name) {
 		event.target.disabled = true;
 		savedMoviesContainer.appendChild(movie.cloneNode(true));
 	});
+	
 	movie.appendChild(likeButton);
   
 	return movie;
