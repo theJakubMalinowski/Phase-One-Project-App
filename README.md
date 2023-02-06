@@ -1,4 +1,10 @@
-<img src="https://github.com/theJakubMalinowski/Phase-One-Project-App/blob/main/images/WI.png" alt="Create a Movie Bucket-List" title="Create a Movie Bucket-List">
+<img 
+src="https://github.com/theJakubMalinowski/Phase-One-Project-App/blob/main/images/WI.png" 
+alt="Create a Movie Bucket-List" 
+title="Create a Movie Bucket-List" 
+style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+
 ## Create a Movie Bucket-List
 
 WI (Watch[ed] it) is a Single Page Application that allows movie waters to create lists of movies that one would like to get to watching or lists of movies any movie-goer should watch!
