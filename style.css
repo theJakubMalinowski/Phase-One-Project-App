@@ -7,9 +7,11 @@ body {
   background-color: #f1f1f1f3;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 0.5em;
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 1.5in;
+  max-height: 0.75in;
 }
 
 form {
@@ -37,7 +39,7 @@ input[type="text"] {
 
 button[type="submit"] {
   width: 100%;
-  background-color: #7988f8;
+  background-color: #5b49e3;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -48,7 +50,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover{
-  background-color: #6b78da;
+  background-color: #5b49e3;
 }
 
 #results {
@@ -68,7 +70,7 @@ button[type="submit"]:hover{
   max-width: 600px;
   margin: 0 auto 20px;
   padding: 10px;
-  background-color: #7988f8;
+  background-color: #5b49e3;
   color: white;
   border: none;
   border-radius: 5px;
@@ -82,7 +84,7 @@ button[type="submit"]:hover{
 }
 
 #toggle-btn:hover {
-  background-color: #6b78da;
+  background-color: #5b49e3;
 }
 
 .movies,
@@ -117,7 +119,7 @@ button[type="submit"]:hover{
 .saved-movies li .like-button {
   display: block;
   width: 100%;
-  background-color: #7988f8;
+  background-color: #5b49e3;
   color: white;
   padding: 10px;
   margin: 10px 0;
@@ -130,7 +132,7 @@ button[type="submit"]:hover{
 
 .movies li .like-button:hover,
 .saved-movies li .like-button:hover {
-  background-color: #6b78da;
+  background-color: #5b49e3;
 }
 
 h1.results-title {
