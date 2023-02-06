@@ -2,7 +2,7 @@
 src="https://github.com/theJakubMalinowski/Phase-One-Project-App/blob/main/images/WI.png" 
 alt="Create a Movie Bucket-List" 
 title="Create a Movie Bucket-List" 
-style="display: inline-block; margin: 0 auto; max-width: 300px">
+style="display: inline-block; margin: 0 auto; max-width: 150px; align-items: center">
 
 
 ## Create a Movie Bucket-List
