@@ -1,8 +1,8 @@
 <img 
-src="https://github.com/theJakubMalinowski/Phase-One-Project-App/blob/main/images/WI.png" 
+src="https://github.com/theJakubMalinowski/Phase-One-Project-App/blob/main/images/WILONG.png" 
 alt="Create a Movie Bucket-List" 
 title="Create a Movie Bucket-List" 
-style="display: inline-block; margin: 0 auto; max-width: 150px; align-items: center">
+style="display: inline-block; margin: 0 auto; max-width: 150px>
 
 
 ## Create a Movie Bucket-List
