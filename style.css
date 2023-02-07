@@ -50,7 +50,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover{
-  background-color: #5b49e3;
+  background-color: #7a68fc;
 }
 
 #results {
@@ -84,7 +84,7 @@ button[type="submit"]:hover{
 }
 
 #toggle-btn:hover {
-  background-color: #5b49e3;
+  background-color: #7a68fc;
 }
 
 .movies,
@@ -132,7 +132,7 @@ button[type="submit"]:hover{
 
 .movies li .like-button:hover,
 .saved-movies li .like-button:hover {
-  background-color: #5b49e3;
+  background-color: #7a68fc
 }
 
 h1.results-title {

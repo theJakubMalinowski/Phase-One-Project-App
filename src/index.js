@@ -12,7 +12,6 @@ const toggleBtn = document.getElementById('toggle-btn');
 const savedMoviesContainer = document.querySelector('.saved-movies');
 const moviesList = document.querySelector('.movies');
  
-  // Function to generate movie element
 function generateMovieElement(poster, name) {
 	const movie = document.createElement('li');
 	
@@ -37,7 +36,7 @@ function generateMovieElement(poster, name) {
   
 	return movie;
 }
-//Search Button eventListener & Fetch request
+
 searchButton.addEventListener('click', (event) => {
 	event.preventDefault();
 	const searchTerm = input.value; 
@@ -58,7 +57,6 @@ searchButton.addEventListener('click', (event) => {
 	});
 });
 
-// Toggle Button eventListener
 toggleBtn.addEventListener('click', () => {
 	const savedMoviesElement = document.querySelector('.saved-movies');
 	savedMoviesElement.classList.toggle('hidden');
@@ -70,7 +68,6 @@ toggleBtn.addEventListener('click', () => {
 	}
 });
 
-// Escape button to reset
 document.addEventListener('keydown', (event) => {
 	if (event.key === 'Escape') {
 	  const moviesList = document.querySelector('.movies');
