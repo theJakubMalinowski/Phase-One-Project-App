@@ -4,7 +4,7 @@ const options = {
 	  'X-RapidAPI-Key': API_URL,
 	  'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
 	}
-  };
+};
   
 const searchButton = document.getElementById('search-button');
 const input = document.getElementById('search-input'); 
@@ -12,36 +12,59 @@ const toggleBtn = document.getElementById('toggle-btn');
 const savedMoviesContainer = document.querySelector('.saved-movies');
 const moviesList = document.querySelector('.movies');
  
-function generateMovieElement(poster, name) {
+function generateMovieElement(poster, name, actors) {
 	const movie = document.createElement('li');
 	
+	const movieContainer = document.createElement('div');
+	movieContainer.classList.add('movie-container');
+	movie.appendChild(movieContainer);
+  
+	const moviePosterContainer = document.createElement('div'); 
+	moviePosterContainer.classList.add('movie-poster-container');
+	movieContainer.appendChild(moviePosterContainer);
+  
 	const moviePoster = document.createElement('img');
 	moviePoster.src = poster;
-	movie.appendChild(moviePoster);
-	
+	moviePosterContainer.appendChild(moviePoster);
+  
 	const movieName = document.createElement('h2');
 	movieName.textContent = name;
-	movie.appendChild(movieName);
+	moviePosterContainer.appendChild(movieName);
+  
+	const movieActors = document.createElement('div'); 
+	movieActors.classList.add('movie-actors');
+	movieActors.textContent = `Starring: ${actors}`;
+	movieContainer.appendChild(movieActors);
+  
+	movieActors.style.display = 'none';
+
+	moviePosterContainer.addEventListener('mouseover', () => { 
+	  movieActors.style.display = 'block';
+	});
+  
+	moviePosterContainer.addEventListener('mouseout', () => { 
+	  movieActors.style.display = 'none';
+	});
 	
 	const likeButton = document.createElement('button');
 	likeButton.classList.add('like-button');
 	likeButton.textContent = 'Like';
 	likeButton.addEventListener('click', (event) => {
-		event.target.innerHTML = 'Liked';
-		event.target.disabled = true;
-		savedMoviesContainer.appendChild(movie.cloneNode(true));
+	  event.target.innerHTML = 'Liked';
+	  event.target.disabled = true;
+	  savedMoviesContainer.appendChild(movie.cloneNode(true));
 	});
 	
 	movie.appendChild(likeButton);
-  
+	
 	return movie;
-}
-
+  }
+  
 searchButton.addEventListener('click', (event) => {
 	event.preventDefault();
 	const searchTerm = input.value; 
   
-	fetch(`https://online-movie-database.p.rapidapi.com/auto-complete?q=${searchTerm}`, options)
+	fetch(`https://online-movie-database.p.rapidapi.com/auto-complete?q=${searchTerm}&s=${searchTerm}`, options)
 	  .then(response => response.json())
 	  .then(data => {
 		const listOfMovies = data.d;
@@ -50,10 +73,11 @@ searchButton.addEventListener('click', (event) => {
 	
 		listOfMovies.forEach(movie => {
 			if (movie.i) {
-				const movieElement = generateMovieElement(movie.i.imageUrl, movie.l);
-				moviesList.appendChild(movieElement);
-		  	}
+			  const movieElement = generateMovieElement(movie.i.imageUrl, movie.l, movie.s);
+			  moviesList.appendChild(movieElement);
+			}
 		});
+		  
 	});
 });
 
@@ -72,5 +96,6 @@ document.addEventListener('keydown', (event) => {
 	if (event.key === 'Escape') {
 	  const moviesList = document.querySelector('.movies');
 	  moviesList.innerHTML = '';
+	  input.value = '';
 	}
 });
